@@ -1,0 +1,101 @@
+using System;
+using System.Windows.Forms;
+
+namespace FormularioCalificacionTareas
+{
+    public partial class Form1 : Form
+    {
+        private ComboBox cmbCursos;
+        private ListBox lstAsignaciones;
+        private Button btnCargarAsignaciones;
+        private Button btnComentarios;
+
+        public Form1()
+        {
+            InitializeComponent();
+            InitializeCustomComponents();
+        }
+
+        private void InitializeCustomComponents()
+        {
+            // Inicialización de los componentes del formulario
+            cmbCursos = new ComboBox();
+            cmbCursos.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCursos.Location = new System.Drawing.Point(10, 10);
+            cmbCursos.SelectedIndexChanged += new EventHandler(cmbCursos_SelectedIndexChanged);
+            Controls.Add(cmbCursos);
+
+            lstAsignaciones = new ListBox();
+            lstAsignaciones.Location = new System.Drawing.Point(10, 40);
+           
+            Controls.Add(lstAsignaciones);
+
+            btnCargarAsignaciones = new Button();
+            btnCargarAsignaciones.Location = new System.Drawing.Point(220, 10);
+            btnCargarAsignaciones.Text = "Cargar Asignaciones";
+            btnCargarAsignaciones.Click += new EventHandler(btnCargarAsignaciones_Click);
+            Controls.Add(btnCargarAsignaciones);
+
+            dgvEstudiantes = new DataGridView();
+            dgvEstudiantes.Location = new System.Drawing.Point(10, 70);
+            dgvEstudiantes.Size = new System.Drawing.Size(400, 200);
+            
+            Controls.Add(dgvEstudiantes);
+
+            txtCalificacion = new TextBox();
+            txtCalificacion.Location = new System.Drawing.Point(10, 280);
+            Controls.Add(txtCalificacion);
+
+            btnGuardarCalificacion = new Button();
+            btnGuardarCalificacion.Location = new System.Drawing.Point(120, 280);
+            btnGuardarCalificacion.Text = "Guardar Calificación";
+            btnGuardarCalificacion.Click += new EventHandler(btnGuardarCalificacion_Click);
+            Controls.Add(btnGuardarCalificacion);
+
+            btnComentarios = new Button();
+            btnComentarios.Location = new System.Drawing.Point(230, 280);
+            btnComentarios.Text = "Comentarios";
+            btnComentarios.Click += new EventHandler(btnComentarios_Click);
+            Controls.Add(btnComentarios);
+
+            // Configuración básica del formulario
+            ClientSize = new System.Drawing.Size(434, 400);
+            Text = "Revisión de Tareas";
+        }
+
+        private void btnCargarAsignaciones_Click(object sender, EventArgs e)
+        {
+            // Aquí iría la lógica para cargar asignaciones
+            // Por ejemplo, recuperar datos de una base de datos y llenar lstAsignaciones
+            MessageBox.Show("Lógica para cargar asignaciones aquí.");
+        }
+
+        private void btnGuardarCalificacion_Click(object sender, EventArgs e)
+        {
+            // Aquí iría la lógica para guardar calificaciones
+            // Por ejemplo, tomar el valor de calificacion y almacenarlo en alguna parte
+            MessageBox.Show("Lógica para guardar calificación aquí.");
+        }
+
+        private void btnComentarios_Click(object sender, EventArgs e)
+        {
+            // Aquí iría la lógica para mostrar un formulario o panel de comentarios
+            MessageBox.Show("Lógica para mostrar comentarios aquí.");
+        }
+
+        private void cmbCursos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Lógica para manejar el evento cuando se cambie la selección en cmbCursos
+        }
+
+        private void dgvEstudiantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lstAsignaciones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
